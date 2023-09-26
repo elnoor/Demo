@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+const AgileAdoption = { 0: "Agile", 1: "Non Agile" }
+const TeamFoundation = { 0: "Formed", 1: "Forming", 2: "Hot Mess", 3: "Not Formed" }
+
 export default function Home() {
     const [tags, setTags] = useState([]);
 
@@ -21,29 +24,30 @@ export default function Home() {
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">portfolio</th>
-                <th scope="col">programs</th>
-                <th scope="col">scope</th>
-                <th scope="col">location</th>
-                <th scope="col">agileAdoption</th>
-                <th scope="col">teamFormation</th>
-                <th scope="col">productLines</th>
-                <th scope="col">businessLines</th>
-                <th scope="col">startegicObjectives</th>
-                <th scope="col">valueStream</th>
-                <th scope="col">deliveryStreams</th>
-                <th scope="col">continuousImprovement</th>
-                <th scope="col">participantGroup</th>
+                <th scope="col">Portfolio</th>
+                <th scope="col">Programs</th>
+                <th scope="col">Scope</th>
+                <th scope="col">Location</th>
+                <th scope="col">Agile Adoption</th>
+                <th scope="col">Team Formation</th>
+                <th scope="col">Product Lines</th>
+                <th scope="col">Business Lines</th>
+                <th scope="col">Startegic Objectives</th>
+                <th scope="col">Value Stream</th>
+                <th scope="col">Delivery Streams</th>
+                <th scope="col">Continuous Improvement</th>
+                <th scope="col">Participant Group</th>
             </tr>
         </thead>
         <tbody>
             {tags.map(t => <tr key={t.id}>
+                <td>{t.id}</td>
                 <td>{t.portfolio}</td>
                 <td>{t.programs}</td>
                 <td>{t.scope}</td>
                 <td>{t.location}</td>
-                <td>{t.agileAdoption}</td>
-                <td>{t.teamFormation}</td>
+                <td>{AgileAdoption[t.agileAdoption]}</td>
+                <td>{TeamFoundation[t.teamFormation]}</td>
                 <td>{t.productLines}</td>
                 <td>{t.businessLines}</td>
                 <td>{t.startegicObjectives}</td>
