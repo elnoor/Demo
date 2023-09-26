@@ -1,0 +1,73 @@
+﻿@model Demo.Models.Tag;
+
+@{
+	ViewData["Title"] = "Create";
+}
+
+<h4>New Tag</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Create">
+			<div class="form-group my-2">
+				<label asp-for="AgileAdoption" class="control-label"></label>
+				<select class="form-select" asp-for="AgileAdoption" asp-items="Html.GetEnumSelectList<AgileAdoption>()">
+					<option selected="selected" value="">Select</option>
+				</select>
+			</div>
+			<div class="form-group my-2">
+				<label asp-for="TeamFormation" class="control-label"></label>
+				<select class="form-select" asp-for="TeamFormation" asp-items="Html.GetEnumSelectList<TeamFormation>()">
+					<option selected="selected" value="">Select</option>
+				</select>
+			</div>
+			<div class="form-group my-2">
+				<label asp-for="ProductLines" class="control-label"></label>
+				<input asp-for="ProductLines" class="form-control" />
+			</div>
+			<div class="form-group my-2">
+				<label asp-for="Portfolio" class="control-label"></label>
+				<input asp-for="Portfolio" class="form-control" />
+			</div>
+			<div class="form-group my-2">
+				<label asp-for="Programs" class="control-label"></label>
+				<input asp-for="Programs" class="form-control" />
+			</div>
+			<div class="form-group my-2">
+				<label asp-for="BusinessLines" class="control-label"></label>
+				<input asp-for="BusinessLines" class="form-control" />
+			</div>
+			<div class="form-group my-2">
+				<label asp-for="StartegicObjectives" class="control-label"></label>
+				<input asp-for="StartegicObjectives" class="form-control" />
+			</div>
+			<div class="form-group my-2">
+				<label asp-for="Scope" class="control-label"></label>
+				<input asp-for="Scope" class="form-control" />
+			</div>
+			<div class="form-group my-2">
+				<label asp-for="Location" class="control-label"></label>
+				<input asp-for="Location" class="form-control" />
+			</div>
+			<div class="form-group my-2">
+				<label asp-for="ValueStream" class="control-label"></label>
+				<input asp-for="ValueStream" class="form-control" />
+			</div>
+			<div class="form-group my-2">
+				<label asp-for="DeliveryStreams" class="control-label"></label>
+				<input asp-for="DeliveryStreams" class="form-control" />
+			</div>
+			<div class="form-group my-2">
+				<label asp-for="ContinuousImprovement" class="control-label"></label>
+				<input asp-for="ContinuousImprovement" class="form-control" />
+			</div>
+			<div class="form-group my-2">
+				<label asp-for="ParticipantGroup" class="control-label"></label>
+				<input asp-for="ParticipantGroup" class="form-control" />
+			</div>
+			<div class="form-group my-2">
+				<input type="submit" value="Create" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
