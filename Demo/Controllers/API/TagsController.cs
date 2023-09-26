@@ -16,9 +16,10 @@ namespace Demo.Controllers.API
 		}
 
 		[HttpGet]
-		public async Task<IEnumerable<Tag>> Get()
+		public async Task<IActionResult> Get()
 		{
-			return await _dbContext.Tags.ToListAsync();
+			var tags = await _dbContext.Tags.ToListAsync();
+			return Ok(tags);
 		}
 	}
 }

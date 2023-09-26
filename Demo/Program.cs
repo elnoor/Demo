@@ -10,22 +10,25 @@ services.AddDatabaseDeveloperPageExceptionFilter();
 // Add services to the container.
 services.AddControllersWithViews();
 
+services.AddCors(options => options.AddPolicy("Cors", builder => builder.AllowAnyOrigin()));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseMigrationsEndPoint();
-    app.UseHsts();
+	app.UseMigrationsEndPoint();
+	app.UseHsts();
 }
 
+app.UseCors("Cors");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+	name: "default",
+	pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapFallbackToFile("index.html");
 
